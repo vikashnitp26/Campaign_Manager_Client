@@ -1,0 +1,113 @@
+<div class="main-content">
+  <div class="container-fluid">
+      <div *ngIf="this.compareState(campaign.home)">
+            <div class="card">
+                    <!-- <div class="card-header">
+                      New Campaign
+                    </div> -->
+                    <div class="card-body">
+                      <h5 class="card-title">New Campaign</h5>
+                      <p class="card-text">Create a new campaign to connect your marketing channels and build a home for your brand.</p>
+                      <button class="btn btn-primary" (click)="this.stateChanged(campaign.create_campaign)">Create</button>
+                    </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-md-4">
+                          <div class="card card-chart">
+                              <!-- <div class="card-header card-header-success">
+                                  <div class="ct-chart" id="dailySalesChart"></div>
+                              </div> -->
+                              <div class="card-body">
+                                  <h4 class="card-title">Daily Sales</h4>
+                                  <p class="card-category">
+                                      <span class="text-success"><i class="fa fa-long-arrow-up"></i> 55% </span> increase in today sales.</p>
+                              </div>
+                              <div class="card-footer">
+                                  <div class="stats">
+                                      <i class="material-icons">access_time</i> updated 4 minutes ago
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-md-4">
+                          <div class="card card-chart">
+                              <!-- <div class="card-header card-header-warning">
+                                  <div class="ct-chart" id="websiteViewsChart"></div>
+                              </div> -->
+                              <div class="card-body">
+                                  <h4 class="card-title">Email Subscriptions</h4>
+                                  <p class="card-category">Last Campaign Performance</p>
+                              </div>
+                              <div class="card-footer">
+                                  <div class="stats">
+                                      <i class="material-icons">access_time</i> campaign sent 2 days ago
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-md-4">
+                          <div class="card card-chart">
+                              <!-- <div class="card-header card-header-danger">
+                                  <div class="ct-chart" id="completedTasksChart"></div>
+                              </div> -->
+                              <div class="card-body">
+                                  <h4 class="card-title">Completed Tasks</h4>
+                                  <p class="card-category">Last Campaign Performance</p>
+                              </div>
+                              <div class="card-footer">
+                                  <div class="stats">
+                                      <i class="material-icons">access_time</i> campaign sent 2 days ago
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+      </div>
+      <!--Create Campaign-->
+      <div *ngIf="this.compareState(campaign.create_campaign)">
+            <button type="button" class="btn btn-primary" (click)="this.stateChanged(campaign.create_template)">Create Template from Scratch</button>
+            <div class="row">
+                    <div class="card col col-md-3" style="width: 18rem;">
+                            <img src="..." class="card-img-top" alt="...">
+                            <div class="card-body">
+                              <h5 class="card-title">Template 1</h5>
+                              <p class="card-text">Can be used for promotional offers emails</p>
+                              <button type="button" class="btn btn-primary" (click)="this.stateChanged(campaign.create_template)">Use Template</button>
+                            </div>
+                          </div>
+                          <div class="card col col-md-3" style="width: 18rem;">
+                                <img src="..." class="card-img-top" alt="...">
+                                <div class="card-body">
+                                  <h5 class="card-title">Template 2</h5>
+                                  <p class="card-text">Can be used for promotional offers emails</p>
+                                  <button type="button" class="btn btn-primary" (click)="this.stateChanged(campaign.create_template)">Use Template</button>
+                                </div>
+                              </div>
+                              <div class="card col col-md-3" style="width: 18rem;">
+                                    <img src="..." class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                      <h5 class="card-title">Template 3</h5>
+                                      <p class="card-text">Can be used for promotional offers emails</p>
+                                      <button type="button" class="btn btn-primary" (click)="this.stateChanged(campaign.create_template)">Use Template</button>
+                                    </div>
+                                  </div>
+                                  <div class="card col col-md-3" style="width: 18rem;">
+                                        <img src="..." class="card-img-top" alt="...">
+                                        <div class="card-body">
+                                          <h5 class="card-title">Template 4</h5>
+                                          <p class="card-text">Can be used for promotional offers emails</p>
+                                          <button type="button" class="btn btn-primary" (click)="this.stateChanged(campaign.create_template)">Use Template</button>
+                                        </div>
+                                      </div>
+            </div>
+
+      </div>
+      <!--Create Campaign-->
+      <div *ngIf="this.compareState(campaign.create_template)">
+            <div class="container">
+                    <email-editor [options]="options" ></email-editor>
+                    <button type="button" class="btn btn-primary" (click)="exportHtml()">Send Email</button>
+                  </div>
+      </div>
+  </div>
+</div>
